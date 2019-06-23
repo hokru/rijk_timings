@@ -1,0 +1,13 @@
+with open('5gly.xyz') as fp:
+    qmol = qcdb.Molecule.from_string(fp.read())
+mol = geometry(qmol.create_psi4_string_from_molecule())
+
+set {
+basis def2-TZVP
+ints_tolerance 2.5e-11
+scf_type mem_df 
+}
+memory 60 GiB
+#energy('scf')
+set scf_type disk_df # can also do in-core despite name
+energy('scf')

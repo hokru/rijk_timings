@@ -1,0 +1,10 @@
+! rhf def2-tzvp conv rijk def2/jk kdiis NOAUTOSTART 
+%scf
+maxdisk 20000
+maxintmem 10000
+end
+%output
+Print[P_SCFIterInfo] 3
+end
+%maxcore 10000
+*xyzfile 0 1 5gly.xyz
